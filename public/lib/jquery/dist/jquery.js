@@ -9829,3 +9829,70 @@ if ( !noGlobal ) {
 
 return jQuery;
 }));
+
+// Adiciona e remove a class inserida de animação
+$.fn.addAnimateClass = function (classe, tempo, remover, next) {
+
+	var elem = $(this).eq(0),
+		retirarClasse = function(){
+			var selfTempo = tempo,
+				selfremover = remover,
+				selfNext = next;
+
+			if(typeof selfremover === 'number'){
+				selfTempo = selfremover;
+			}else if(typeof selfNext === 'number'){
+				selfTempo = selfNext;
+			}else if(typeof selfTempo === 'number'){
+				selfTempo = selfTempo;
+			}
+
+			if(selfTempo && typeof selfTempo === 'number'){
+				return selfTempo;
+			}else{
+				return 1000;
+			}
+		},
+		esconderElem = function(){
+			var selfTempo = tempo,
+				selfremover = remover,
+				selfNext = next;
+
+			if(typeof selfremover === 'boolean'){
+				selfremover = selfremover;
+			}else if(typeof selfNext === 'boolean'){
+				selfremover = selfNext;
+			}else if(typeof selfTempo === 'boolean'){
+				selfremover = selfTempo;
+			}
+
+			if(selfremover === true){
+				elem.hide();
+			}
+		},
+		callback = function(){
+			var selfTempo = tempo,
+				selfremover = remover,
+				selfNext = next;
+
+
+			if(typeof selfremover === 'function'){
+				selfNext = selfremover;
+			}else if(typeof selfNext === 'function'){
+				selfNext = selfNext;
+			}else if(typeof selfTempo === 'function'){
+				selfNext = selfTempo;
+			}
+
+			if(typeof selfNext === 'function'){
+				selfNext();
+			}
+		};
+
+	elem.addClass(classe);
+	setTimeout(function(){
+		elem.removeClass(classe);
+		esconderElem();
+		callback();
+	}, retirarClasse());
+};

@@ -1,7 +1,89 @@
-<div class="row">
-  <div class="container">
+<div class="container">
+  <div class="row searchOed">
 
-    <h1 class="text-center text-info">OedFlix</h1>
+    <div class="jumbotron jumbotronOED">
+      <h2 class="text-center">OedFlix</h2>
+    </div>
 
+    <div class="input-group">
+      <span class="input-group-addon" id="basic-addon3">Buscar OED..</span>
+      <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon3">
+      <span class="input-group-addon" id="basic-addon3">1/20</span>
+    </div>
+
+  </div>
+
+  <div class="row contentOeds">
+
+
+    <div class="col-md-12">
+
+      <div class="jumbotron col-md-12 jumbotronOED">
+
+        <div class="page-header">
+        <ul class="nav nav-tabs">
+            <li role="presentation" class="active"><a href="#">Todos <span class="label label-pill label-info">14</span></a></li>
+            <li role="presentation"><a href="#">Recentes <span class="label label-pill label-success">3</span></a></li>
+            <li role="presentation"><a href="#">Recomendados <span class="label label-pill label-warning">2</span></a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-4 oed" data-toggle="modal" data-target="#myModal">
+          <div class="thumbnail">
+            <img src="oeds/1/capa.png" alt="" class="img-responsive">
+            <div class="caption text-center">
+              <h4>Pesca-vogais</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 oed" data-toggle="modal" data-target="#myModal">
+          <div class="thumbnail">
+            <img src="oeds/1/capa.png" alt="" class="img-responsive">
+            <div class="caption text-center">
+              <h4>Pesca-vogais</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 oed" data-toggle="modal" data-target="#myModal">
+          <div class="thumbnail">
+            <img src="oeds/1/capa.png" alt="" class="img-responsive">
+            <div class="caption text-center">
+              <h4>Pesca-vogais</h4>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title text-center" id="myModalLabel">Pesca vogais</h4>
+      </div>
+      <div class="modal-body">
+
+
+      <iframe src="oeds/1/index.html" frameborder="0" style="width: 100%; height: 560px;"></iframe>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
   </div>
 </div>
