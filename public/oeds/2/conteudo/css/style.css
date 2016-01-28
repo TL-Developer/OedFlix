@@ -1,0 +1,247 @@
+/* SEU CSS AQUI */
+
+@charset "CP850";
+/* STYLE SHEET SASS
+* by: Tiago Lima
+* qualquer dúvida me procure
+*/
+@font-face {
+    font-family: 'MyriadProLight';
+    src: url('fontes/myriadpro-light.eot');
+    src: url('fontes/myriadpro-light.eot') format('embedded-opentype'),
+         url('fontes/myriadpro-light.woff') format('woff'),
+         url('fontes/myriadpro-light.ttf') format('truetype'),
+         url('fontes/myriadpro-light.svg#MyriadProLight') format('svg');
+}
+
+
+
+.videoContent {
+  background: url(../img/bgVideo.png) repeat center;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  z-index: 10;
+  position: absolute;
+  text-align: center;
+  }
+
+.game1, .game2, .game3, .game4 {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  position: absolute;
+  margin: 0px 0 0; }
+  .game1 .popup, .game2 .popup, .game3 .popup, .game4 .popup {
+    width: 100%;
+    height: 100%;
+    background: none rgba(255, 255, 255, 0.8);
+    position: absolute;
+    z-index: 10;
+    display: none; }
+    .game1 .popup .content, .game2 .popup .content, .game3 .popup .content, .game4 .popup .content {
+      width: 80%;
+      background: #fff;
+      position: absolute;
+      top: -110%;
+      left: 10%;
+      border-radius: 20px; }
+      .game1 .popup .content p, .game2 .popup .content p, .game3 .popup .content p, .game4 .popup .content p {
+        text-align: center;
+        padding: 20px 25px;
+        color: #000;
+        font-size: 38px;
+        font-family: "MyriadProLight"; }
+      .game1 .popup .content .btn, .game2 .popup .content .btn, .game3 .popup .content .btn, .game4 .popup .content .btn {
+        background: #b90059;
+        border-radius: 0 0 15px 15px;
+        text-align: center;
+        padding: 12px 0;
+        color: #fff;
+        font-size: 38px;
+        font-family: "MyriadProLight";
+        width: 250px;
+        position: absolute;
+        bottom: -76px;
+        left: 35%;
+        cursor: pointer; }
+  .game1 .contentLeft, .game2 .contentLeft, .game3 .contentLeft, .game4 .contentLeft {
+    float: left;
+    width: 495px;
+    height: 100%;
+    background: #ee2c89;
+    position: relative; }
+    .game1 .contentLeft p, .game2 .contentLeft p, .game3 .contentLeft p, .game4 .contentLeft p {
+      font-family: "MyriadProLight";
+      font-size: 90px;
+      color: #fff;
+      width: 300px;
+      margin: 168px 0 0 30px;
+      font-weight: bold;
+      text-align: center;
+      line-height: 80px; }
+    .game1 .contentLeft .action, .game2 .contentLeft .action, .game3 .contentLeft .action, .game4 .contentLeft .action {
+      width: 82px;
+      height: 82px;
+      background: #fff;
+      border-radius: 5px;
+      border: 5px solid #fff;
+      position: absolute;
+      right: 27px;
+      top: 238px; }
+    .game1 .contentLeft ul, .game2 .contentLeft ul, .game3 .contentLeft ul, .game4 .contentLeft ul {
+      list-style: none;
+      position: absolute;
+      bottom: 22px;
+      left: 22px;
+      width: 435px;
+      padding: 0; }
+      .game1 .contentLeft ul li, .game2 .contentLeft ul li, .game3 .contentLeft ul li, .game4 .contentLeft ul li {
+        float: left;
+        width: 82px;
+        height: 72px;
+        border-radius: 5px;
+        border: 5px solid #fff;
+        color: #fff;
+        font-family: "MyriadProLight";
+        font-size: 70px;
+        text-align: center;
+        padding: 5px 0;
+        background: #00d705;
+        margin-right: 20px;
+        font-weight: bold;
+        cursor: pointer; }
+      .game1 .contentLeft ul li:last-child, .game2 .contentLeft ul li:last-child, .game3 .contentLeft ul li:last-child, .game4 .contentLeft ul li:last-child {
+        margin-right: 0; }
+  .game1 .contentRight, .game2 .contentRight, .game3 .contentRight, .game4 .contentRight {
+    float: right;
+    width: 525px;
+    height: 600px;
+    background: #fff;
+    text-align: center; }
+    .game1 .contentRight img, .game2 .contentRight img, .game3 .contentRight img, .game4 .contentRight img {
+      padding: 38px 0 0; }
+
+.game2 {
+  opacity: 0; }
+  .game2 .contentLeft {
+    background: #ee5a2c; }
+    .game2 .contentLeft p {
+      width: 343px;
+      margin: 120px 0 0 30px;
+      font-size: 80px; }
+    .game2 .contentLeft .action {
+      top: 123px; }
+    .game2 .contentLeft ul li {
+      background: #25c29a; }
+  .game2 .contentRight {
+    text-align: right; }
+    .game2 .contentRight img {
+      padding: 8px 0 0; }
+
+.game3 {
+  opacity: 0; }
+  .game3 .contentLeft {
+    background: #00b09d; }
+    .game3 .contentLeft p {
+      width: 343px;
+      margin: 130px 0 0 40px;
+      font-size: 80px; }
+    .game3 .contentLeft .action {
+      top: 292px; }
+    .game3 .contentLeft ul li {
+      background: #ff5000; }
+  .game3 .contentRight {
+    text-align: right; }
+    .game3 .contentRight img {
+      padding: 12px 0 0;
+      width: 100%;
+      height: 100%; }
+
+.game4 {
+  opacity: 0; }
+  .game4 .contentLeft {
+    background: #00a4c7; }
+    .game4 .contentLeft p {
+      width: 343px;
+      margin: 130px 0 0 23px;
+      font-size: 80px; }
+    .game4 .contentLeft .action {
+      top: 207px;
+      right: 74px; }
+    .game4 .contentLeft ul li {
+      background: #ff7700; }
+  .game4 .contentRight {
+    text-align: center; }
+    .game4 .contentRight img {
+      padding: 44px 0 0; }
+
+
+@keyframes zoomOut-animation {
+  0%{
+    transform: rotate(0deg) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(360deg) scale(3);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes zoomOut-animation {
+  0%{
+    -webkit-transform: rotate(0deg) scale(1);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: rotate(360deg) scale(3);
+    opacity: 0;
+  }
+}
+
+@-ms-keyframes zoomOut-animation {
+  0%{
+    -ms-transform: rotate(0deg) scale(1);
+    opacity: 1;
+  }
+  100% {
+    -ms-transform: rotate(360deg) scale(3);
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes zoomOut-animation {
+  0%{
+    -moz-transform: rotate(0deg) scale(1);
+    opacity: 1;
+  }
+  100% {
+    -moz-transform: rotate(360deg) scale(3);
+    opacity: 0;
+  }
+}
+
+@-o-keyframes zoomOut-animation {
+  0%{
+    -o-transform: rotate(0deg) scale(1);
+    opacity: 1;
+  }
+  100% {
+    -o-transform: rotate(360deg) scale(3);
+    opacity: 0;
+  }
+}
+
+.zoomOut-animation {
+  -webkit-animation: zoomOut-animation 2s linear;
+  -moz-animation: zoomOut-animation 2s linear;
+  -ms-animation: zoomOut-animation 2s linear;
+  -o-animation: zoomOut-animation 2s linear;
+  animation: zoomOut-animation 2s linear;
+
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
+}

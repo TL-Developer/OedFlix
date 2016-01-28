@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- HTML DO OED AQUI -->
+<div class="OED">
+
+  <div class="teste zoomOut-animation">
+
+  </div>
+
+	<div class="videoContent">
+    <video class="video" width="800" height="600" controls>
+      <source src="media/baloes.mp4" type="video/mp4">
+      Seu Browser não suporta videos em HTML5, por favor atualize!
+    </video>
+  </div>
+
+
+
+  <div class="game1">
+    <div class="popup">
+      <div class="content">
+        <p>Tente novamente! Você precisa utilizar a pontuação que encerra a ideia.</p>
+        <div class="btn">Fechar</div>
+      </div>
+    </div>
+
+    <div class="contentLeft">
+      <p>Fui às compras</p>
+      <div class="action droppGame1"></div>
+      <ul>
+        <li class="dragg">?</li>
+        <li class="dragg">!</li>
+        <li class="dragg">...</li>
+        <li class="dragg" id="certo">.</li>
+      </ul>
+    </div>
+
+    <div class="contentRight">
+      <img src="img/pinguim.png" alt="pinguim">
+    </div>
+  </div>
+
+  <div class="game2" style="display: none;">
+    <div class="popup">
+      <div class="content">
+        <p>Tente novamente! Você precisa utilizar a pontuação que encerra a ideia.</p>
+        <div class="btn">Fechar</div>
+      </div>
+    </div>
+
+    <div class="contentLeft">
+      <p>Eu queria ser mais rápida.</p>
+      <div class="action droppGame2"></div>
+      <ul>
+        <li class="dragg">?</li>
+        <li class="dragg">!</li>
+        <li class="dragg" id="certo">...</li>
+        <li class="dragg">.</li>
+      </ul>
+    </div>
+
+    <div class="contentRight">
+      <img src="img/tartaruga.png" alt="tartaruga">
+    </div>
+  </div>
+
+  <div class="game3" style="display: none;">
+    <div class="popup">
+      <div class="content">
+        <p>Tente novamente! Você precisa utilizar a pontuação que encerra a ideia.</p>
+        <div class="btn">Fechar</div>
+      </div>
+    </div>
+
+    <div class="contentLeft">
+      <p>Venha se divertir conosco</p>
+      <div class="action droppGame3"></div>
+      <ul>
+        <li class="dragg">?</li>
+        <li class="dragg" id="certo">!</li>
+        <li class="dragg">...</li>
+        <li class="dragg">.</li>
+      </ul>
+    </div>
+
+    <div class="contentRight">
+      <img src="img/animais.png" alt="animais">
+    </div>
+  </div>
+
+  <div class="game4" style="display: none;">
+    <div class="popup">
+      <div class="content">
+        <p>Tente novamente! Você precisa utilizar a pontuação que encerra a ideia.</p>
+        <div class="btn">Fechar</div>
+      </div>
+    </div>
+
+    <div class="contentLeft">
+      <p>Quem sou eu</p>
+      <div class="action droppGame4"></div>
+      <ul>
+        <li class="dragg" id="certo">?</li>
+        <li class="dragg">!</li>
+        <li class="dragg">...</li>
+        <li class="dragg">.</li>
+      </ul>
+    </div>
+
+    <div class="contentRight">
+      <img src="img/hipopotamo.png" alt="hipopotamo">
+    </div>
+  </div>
+
+</div>
+<!-- HTML DO OED AQUI -->
+
+
+	<!-- CARREGAMENTO DE SCRIPTS -->
+  <script type="text/javascript" src="../js/carrega_oed.js"></script>
+  <script type="text/javascript" src="js/lib/jquery-animate-css-rotate-scale.js"></script>
+	<script type="text/javascript" src="js/lib/jquery-css-transform.js"></script>
+	<script type="text/javascript" src="js/funcoes.js"></script>
+</body>
+</html>

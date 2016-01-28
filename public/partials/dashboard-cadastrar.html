@@ -1,0 +1,73 @@
+<form id="upload-widget" method="post" action="/dashboard/sendOed" class="dropzone" enctype="multipart/form-data">
+  <div class="fallback">
+    <input name="file" type="file" />
+  </div>
+
+  <button type="submit">enviar</button>
+</form>
+
+<div class="container">
+
+  <div class="row margin-top-10">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="pull-left">
+          <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+          Olá, Tiago Lima
+        </div>
+
+         <div class="pull-right">
+          <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+          <a href="#">Desligar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row contentOeds">
+
+      <div class="jumbotron col-md-12 jumbotronOED">
+
+        <h3>Cadastrar novo OED</h3>
+
+        <form>
+
+          <div class="pull-left col-md-6">
+            <div class="col-md-12">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Titulo OED">
+              </div>
+            </div>
+
+            <div class="col-md-12">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Imagem">
+              </div>
+            </div>
+          </div>
+
+
+          <div class="pull-right col-md-6">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label>Cole aqui seu arquivo .zip ou .rar</label>
+              </div>
+            </div>
+          </div>
+
+        </form>
+
+      </div>
+
+  </div>
+
+
+  <div class="row">
+
+    <div ng-include src="'partials/footer.html'"></div>
+
+  </div>
+
+
+</div>
