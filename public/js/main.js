@@ -1,4 +1,4 @@
-angular.module('OedFlix', ['ngRoute','ngResource']).config(function($routeProvider){
+angular.module('OedFlix', ['ngRoute','ngResource', 'MyDirectives']).config(function($routeProvider){
 
   $routeProvider
     .when('/oeds', {
