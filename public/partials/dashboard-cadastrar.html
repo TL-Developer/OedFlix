@@ -23,9 +23,9 @@
 
         <h3>Cadastrar novo OED</h3>
 
-        <form>
+        <ng-form>
 
-          <div class="pull-left col-md-6">
+          <div class="col-md-12">
             <div class="col-md-12">
               <div class="form-group">
                 <input type="text" class="form-control" placeholder="Titulo OED">
@@ -34,37 +34,56 @@
 
             <div class="col-md-12">
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Imagem da capa">
+                <select name="categoria" id="" class="form-control">
+                  <option>Categoria</option>
+                  <option>Matematica</option>
+                  <option>Portugues</option>
+                  <option>Historia</option>
+                  <option>Geografia</option>
+                  <option>Ciencias</option>
+                </select>
               </div>
             </div>
+
+            <div class="col-md-12">
+              <div class="form-group">
+                <label class="text-info">Inserir imagem da capa</label>
+                <div class="well">
+                  <form method="post" action="/dashboard/cadastrar" enctype="multipart/form-data">
+                      <input type="file" class="filestyle" name="file" fileread="imovel.imagem" required>
+                      <br />
+                      <input type="submit" class="btn btn-info btn-block" value="Enviar">
+                      <!-- <input type="text" class="form-control" ng-model="imovel.imagem" disabled> -->
+                  </form>
+                </div>
+              </div>
+            </div>
+
+
+
           </div>
 
-         <!--  <div class="pull-right col-md-6">
-              <div class="well">
-                <label>Cole aqui seu arquivo .zip ou .rar</label>
-
-
-
-
-
-
-              </div>
-          </div> -->
-
         </form>
 
-        <form method="post" action="/dashboard/cadastrar" enctype="multipart/form-data">
 
-            <input type="file" class="filestyle" name="file" fileread="imovel.imagem" required>
-
-            <input type="submit" class="btn btn-primary" value="Enviar">
-
-            <input type="text" class="form-control" ng-model="imovel.imagem" disabled>
-
-        </form>
 
 
       </div>
+
+      <div class="col-md-12">
+              <label class="text-info">Insira aqui o oed .zip ou .rar</label>
+                <div class="well">
+                  <form method="post" action="/dashboard/cadastrar" enctype="multipart/form-data">
+
+                      <input type="file" class="filestyle" name="file" fileread="imovel.imagem" required>
+                      <br />
+                      <input type="submit" class="btn btn-info btn-block" value="Enviar">
+
+                      <!-- <input type="text" class="form-control" ng-model="imovel.imagem" disabled> -->
+
+                  </form>
+                </div>
+            </div>
 
   </div>
 
