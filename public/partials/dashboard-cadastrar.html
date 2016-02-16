@@ -17,82 +17,70 @@
   </div>
 
 
-  <div class="row contentOeds">
+<div class="row contentOeds">
 
-      <div class="jumbotron col-md-12 jumbotronOED">
+  <div class="jumbotron col-md-12 jumbotronOED">
 
-        <h3>Cadastrar novo OED</h3>
+    <h3>Cadastrar novo OED</h3>
 
-        <ng-form>
+    <form>
 
-          <div class="col-md-12">
-            <div class="col-md-12">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Titulo OED">
-              </div>
-            </div>
+      <div class="col-md-12">
 
-            <div class="col-md-12">
-              <div class="form-group">
-                <select name="categoria" id="" class="form-control">
-                  <option>Categoria</option>
-                  <option>Matematica</option>
-                  <option>Portugues</option>
-                  <option>Historia</option>
-                  <option>Geografia</option>
-                  <option>Ciencias</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="col-md-12">
-              <div class="form-group">
-                <label class="text-info">Inserir imagem da capa</label>
-                <div class="well">
-                  <form method="post" action="/dashboard/cadastrar" enctype="multipart/form-data">
-                      <input type="file" class="filestyle" name="file" fileread="imovel.imagem" required>
-                      <br />
-                      <input type="submit" class="btn btn-info btn-block" value="Enviar">
-                      <!-- <input type="text" class="form-control" ng-model="imovel.imagem" disabled> -->
-                  </form>
-                </div>
-              </div>
-            </div>
-
-
-
+        <div class="col-md-5">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Titulo OED">
           </div>
+        </div>
 
-        </form>
+        <div class="col-md-5">
+          <div class="form-group">
+            <select name="categoria" class="form-control">
+                <option value="" disabled="">Disciplina</option>
+                <option ng-repeat="disciplina in disciplinas" value="{{disciplina.nome}}">
+                  {{disciplina.nome}}
+                </option>
+            </select>
+          </div>
+        </div>
 
-
-
+        <div class="col-md-2">
+          <div class="form-group">
+            <input type="number" class="form-control" value="1">
+          </div>
+        </div>
 
       </div>
 
-      <div class="col-md-12">
-              <label class="text-info">Insira aqui o oed .zip ou .rar</label>
-                <div class="well">
-                  <form method="post" action="/dashboard/cadastrar" enctype="multipart/form-data">
+    </form>
 
-                      <input type="file" class="filestyle" name="file" fileread="imovel.imagem" required>
-                      <br />
-                      <input type="submit" class="btn btn-info btn-block" value="Enviar">
+    <div class="col-md-12">
+      <label class="text-info">Insira aqui o oed .zip ou .rar</label>
+        <div class="well">
+          <form method="post" action="/dashboard/cadastrar" enctype="multipart/form-data">
 
-                      <!-- <input type="text" class="form-control" ng-model="imovel.imagem" disabled> -->
+              <input type="file" class="filestyle" name="file" fileread="imovel.imagem" required>
+              <br />
+              <input type="submit" class="btn btn-info btn-block" value="Enviar">
 
-                  </form>
-                </div>
-            </div>
+              <!-- <input type="text" class="form-control" ng-model="imovel.imagem" disabled> -->
 
-  </div>
+          </form>
+        </div>
+    </div>
 
-
-  <div class="row">
-
-    <div ng-include src="'partials/footer.html'"></div>
+    <a href="#/dashboard" class="btn btn-primary">Voltar</a>
 
   </div>
-
 
 </div>
+
+
+
+<div class="row">
+
+  <div ng-include src="'partials/footer.html'"></div>
+
+</div>
+
+

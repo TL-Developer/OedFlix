@@ -1,18 +1,24 @@
 var Oeds = [
   {
-    titulo: 'Pesca-vogais',
+    titulo: 'Pesca vogais',
     caminho: 'oeds/1/index.html',
-    imagem: 'oeds/1/capa.png'
+    imagem: 'oeds/1/capa.png',
+    disciplina: 'Portugues',
+    ano: 5
   },
   {
-    titulo: 'Pontuacao',
+    titulo: 'Pontuacão',
     caminho: 'oeds/2/index.html',
-    imagem: 'oeds/2/capa.png'
+    imagem: 'oeds/2/capa.png',
+    disciplina: 'Matemática',
+    ano: 5
   },
   {
-    titulo: 'CH-LH-NH',
+    titulo: 'Ch lh e nh',
     caminho: 'oeds/3/index.html',
-    imagem: 'oeds/3/capa.png'
+    imagem: 'oeds/3/capa.png',
+    disciplina: 'Ciências',
+    ano: 5
   }
 ];
 

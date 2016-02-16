@@ -10,27 +10,24 @@
     <div class="jumbotron col-md-12 jumbotronOED">
 
       <div class="input-group">
-        <span class="input-group-addon" id="basic-addon3">Buscar OED..</span>
-        <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon3">
-        <span class="input-group-addon" id="basic-addon3">1/20</span>
+        <span class="input-group-addon" id="basic-addon3">Filtrar OED..</span>
+        <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon3" ng-model-options="{debounce: 500}" ng-model="filtro">
+        <span class="input-group-addon" id="basic-addon3">1/{{oeds.length}}</span>
       </div>
 
       <div class="page-header">
       <ul class="nav nav-tabs">
-          <li role="presentation" class="active"><a href="#">Português <span class="label label-pill label-info">14</span></a></li>
-          <li role="presentation"><a href="#">Matemática <span class="label label-pill label-success">3</span></a></li>
-          <li role="presentation"><a href="#">Ciências <span class="label label-pill label-warning">2</span></a></li>
-          <li role="presentation"><a href="#">Geôgrafia <span class="label label-pill label-warning">2</span></a></li>
-          <li role="presentation"><a href="#">História <span class="label label-pill label-warning">2</span></a></li>
-          <li role="presentation"><a href="#">Espanhol <span class="label label-pill label-warning">2</span></a></li>
+          <!-- class="active" -->
+          <li role="presentation" ng-repeat="disciplina in disciplinas"><a href="#">{{disciplina.nome}} <span class="label label-pill label-info">{{disciplina.qtdOeds}}</span></a></li>
         </ul>
       </div>
 
-      <div class="col-md-4 oed" data-toggle="modal" data-target="#{{oed.titulo}}" ng-repeat="oed in oeds">
+      <div class="col-md-4 oed painel-animado" data-toggle="modal" data-target="#{{oed.titulo}}" ng-repeat="oed in oeds | filter:filtro">
         <div class="thumbnail">
           <img ng-src="{{oed.imagem}}" alt="" class="img-responsive">
           <div class="caption text-center">
-            <h4>{{oed.titulo}}</h4>
+            <h3>{{oed.titulo}}</h3>
+            <h5 class="text-info">{{oed.disciplina}}: {{oed.ano}}º ano</h5>
           </div>
         </div>
 
@@ -45,7 +42,7 @@
               <div class="modal-body">
 
 
-              <iframe ng-src="{{oed.caminho}}" frameborder="0" style="width: 100%; height: 560px;"></iframe>
+              <!-- <iframe ng-src="{{oed.caminho}}" frameborder="0" style="width: 100%; height: 560px;"></iframe> -->
 
 
               </div>

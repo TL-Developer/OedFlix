@@ -22,15 +22,16 @@
       <div class="jumbotron col-md-12 jumbotronOED">
 
         <div class="col-ms-12">
-          <a href="#/dashboard/cadastrar" class="btn btn-primary">Cadastrar novo oed</a>
+          <a href="#/dashboard/cadastrar" class="btn btn-default">Cadastrar novo oed</a>
+          <a href="#/dashboard/disciplinas" class="btn btn-default">Disciplinas</a>
         </div>
 
         <br />
 
         <div class="input-group">
-          <span class="input-group-addon" id="basic-addon3">Buscar OED..</span>
-          <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon3">
-          <span class="input-group-addon" id="basic-addon3">1/20</span>
+          <span class="input-group-addon" id="basic-addon3">Filtrar OED..</span>
+          <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon3" ng-model-options="{debounce: 500}" ng-model="filtro">
+          <span class="input-group-addon" id="basic-addon3">1/{{oeds.length}}</span>
         </div>
 
         <div class="page-header">
@@ -44,7 +45,7 @@
           </ul>
         </div>
 
-        <div class="col-md-4 oed" data-toggle="modal" data-target="#{{oed.titulo}}" ng-repeat="oed in oeds">
+        <div class="col-md-4 oed painel-animado" data-toggle="modal" data-target="#{{oed.titulo}}" ng-repeat="oed in oeds | filter:filtro">
           <div class="thumbnail">
             <img ng-src="{{oed.imagem}}" alt="" class="img-responsive">
             <div class="caption text-center">

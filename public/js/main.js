@@ -1,4 +1,4 @@
-angular.module('OedFlix', ['ngRoute','ngResource', 'MyDirectives']).config(function($routeProvider){
+angular.module('OedFlix', ['ngRoute','ngResource', 'MyDirectives','ngAnimate']).config(function($routeProvider){
 
   $routeProvider
     .when('/oeds', {
@@ -14,6 +14,11 @@ angular.module('OedFlix', ['ngRoute','ngResource', 'MyDirectives']).config(funct
     .when('/dashboard/cadastrar', {
       templateUrl: 'partials/dashboard-cadastrar.html',
       controller: 'DashCadastrarController'
+    })
+
+    .when('/dashboard/disciplinas', {
+      templateUrl: 'partials/dashboard-disciplinas.html',
+      controller: 'DisciplinasController'
     })
 
   .otherwise({redirectTo: '/oeds'});

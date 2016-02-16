@@ -1,0 +1,78 @@
+<div class="container">
+
+  <div class="row margin-top-10">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="pull-left">
+          <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+          Olá, Tiago Lima
+        </div>
+
+         <div class="pull-right">
+          <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+          <a href="#">Desligar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<div class="row contentOeds">
+
+  <div class="jumbotron col-md-12 jumbotronOED">
+
+    <div class="row">
+
+      <div id="create-todo" class="well">
+        <h3 class="text-center">Disciplinas</h3>
+        <form ng-submit="addDisciplina()">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Adicione uma nova disciplina" ng-model="disciplina" name="disciplina">
+            <span class="input-group-btn">
+              <button type="submit" class="btn btn-primary" type="button">Ok</button>
+            </span>
+          </div>
+        </form>
+      </div>
+
+    </div>
+
+
+    <div class="row">
+      <table id="todos" class="table table-bordered table-striped">
+        <tbody>
+          <tr ng-repeat="disciplina in disciplinas">
+            <td>
+              <div class="show-item row-fluid">
+                <span class="todo-content">{{disciplina.nome}}</span>
+
+                <div class="pull-right item-buttons">
+                  <span class="glyphicon glyphicon-remove-circle" aria-hidden="true" style="color:red;font-size:25px;cursor:pointer;" ng-click="removeDisciplina(disciplina)"></span>
+                </div>
+              </div>
+
+              <div class="edit-item input-append hidden">
+                <input type="text" class="todo-input input-medium" value="teste"><button type="submit" class="btn">Create</button>
+              </div>
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  <a href="#/dashboard" class="btn btn-primary">Voltar</a>
+
+  </div>
+
+</div>
+
+
+
+<div class="row">
+
+  <div ng-include src="'partials/footer.html'"></div>
+
+</div>
+
+

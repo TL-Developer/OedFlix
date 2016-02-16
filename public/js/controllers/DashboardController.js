@@ -1,5 +1,7 @@
 angular.module('OedFlix').controller('DashboardController',['$scope','Oeds', function($scope, Oeds){
 
+  $scope.filtro = '';
+
   $scope.oeds = [];
 
   Oeds.query(function(oeds){
