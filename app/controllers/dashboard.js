@@ -24,13 +24,14 @@ module.exports = function(app){
             console.log('Não foi possível enviar a imagem', error);
           }else{
             req.flash('info', 'Flash is back!');
-            res.redirect('/#/dashboard');
 
             fs.createReadStream('./public/oeds/'+file.originalFilename).pipe(unzip.Extract({ path: './public/oeds' }));
 
             fs.unlink(path, function (e) {
               if (e) throw e;
             });
+
+            res.sendfile('./public/partials/upload-oed-success.html');
 
           }
         });
