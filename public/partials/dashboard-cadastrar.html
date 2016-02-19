@@ -29,9 +29,9 @@
       <label class="text-info">Insira aqui o oed .zip ou .rar</label>
         <div class="well">
           <form method="post" target="_blank" action="/dashboard/cadastrar" enctype="multipart/form-data" ng-submit="enviarOed()">
-              <input type="file" class="filestyle" name="file" fileread="oed.path" required pattern="[a-zA-Z]\d.zip">
+              <input type="file" class="filestyle" name="file" fileread="oed.path" required accept=".zip,.rar" onchange="angular.element(this).scope().fileNameChanged(this.files)">
               <br />
-              <input type="submit" class="btn btn-info btn-block" value="Enviar">
+              <input type="submit" class="btn btn-info btn-block" value="Enviar" ng-show="uploadRarOrZip">
           </form>
         </div>
     </div>

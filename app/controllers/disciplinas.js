@@ -1,19 +1,51 @@
-var disciplinas = [
-  {nome: 'Portugues', qtdOeds: 5},
-  {nome: 'Matemática', qtdOeds: 3},
-  {nome: 'Geôgrafia', qtdOeds: 2},
-  {nome: 'Ciências', qtdOeds: 3},
-  {nome: 'História', qtdOeds: 1},
-  {nome: 'Espanhol', qtdOeds: 2}
-];
+module.exports = function(app){
 
-module.exports = function(){
+  var controller = {}
+    , Disciplinas = app.models.disciplinas;
 
-  var controller = {};
 
+  // RETRIVE
   controller.getDisciplinas = function(req, res){
-    res.json(disciplinas);
+    Disciplinas.find().exec().then(function(disciplinas){
+      res.json(disciplinas);
+    }, function(err){
+      console.log('Não foi possível listar as disciplinas');
+      console.log(err);
+    });
   };
+
+  // CREATE
+  controller.saveDisciplinas = function(req, res){
+    var disciplina = req.body
+      , _id = req.body._id;
+
+    if(_id){
+      Disciplinas.findByIdAndUpdate(_id, req.body).exec().then(function(disciplina){
+        res.json(disciplina);
+      },
+      function(erro){
+        console.error(erro);
+        res.status(500).json(erro);
+      });
+    }else{
+      Disciplinas.create(disciplina).then(function(disciplina){
+        res.status(201).json(disciplina);
+      },
+      function(erro){
+        console.log(erro);
+        res.status(500).json(erro);
+      });
+    }
+
+    res.end();
+  };
+
+  // DELETE
+  controller.removeDisciplinas = function(req, res){
+    console.log(req.body);
+  };
+
+  // UPDATE
 
   return controller;
 };
