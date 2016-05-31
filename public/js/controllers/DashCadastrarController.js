@@ -1,8 +1,8 @@
-angular.module('OedFlix').controller('DashCadastrarController',['$scope','Oeds','Disciplinas','$http', function($scope, Oeds, Disciplinas, $http){
+angular.module('OedFlix').controller('DashCadastrarController',['$scope','Oeds','Disciplinas','$http', '$timeout', function($scope, Oeds, Disciplinas, $http, $timeout){
 
 
   $scope.mensagem = '';
-
+  $scope.oedEnviado = '';
   $scope.disciplinas = [];
 
   Disciplinas.query(function(disciplinas){
@@ -12,16 +12,31 @@ angular.module('OedFlix').controller('DashCadastrarController',['$scope','Oeds',
     console.log('Não foi possível obter as disciplinas')
   });
 
-  $scope.enviarOed = function(form){
+  $scope.enviarOed = function(){
     $scope.oedEnviado = 'ok';
   };
 
   $scope.cadastrarOed = function(oed){
-    // Retirando extensão .rar ou .zip para salvar
+
     var extension = oed.path.substr(oed.path.length - 4);
-    oed.path = oed.path.replace(extension, '');
-    console.log(oed);
-    $scope.mensagem = 'Oed cadastrado com sucesso';
+
+    var newOed = {
+      titulo: oed.titulo,
+      disciplina: oed.disciplina,
+      ano: oed.ano,
+      path: oed.path = oed.path.replace(extension, '')
+    };
+
+    $http.post('/oeds', newOed).then(function(success){
+      $scope.mensagem = 'oed cadastrado com sucesso!';
+
+      $timeout(function(){
+        $scope.mensagem = '';
+      }, 3000);
+
+    }, function(err){
+      $scope.mensagem = 'não foi possível cadastrar este oed';
+    });
   };
 
   $scope.uploadRarOrZip = false;

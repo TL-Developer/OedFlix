@@ -28,7 +28,7 @@
     <div class="col-md-12" ng-hide="oedEnviado">
       <label class="text-info">Insira aqui o oed .zip ou .rar</label>
         <div class="well">
-          <form method="post" target="_blank" action="/dashboard/cadastrar" enctype="multipart/form-data" ng-submit="enviarOed()">
+          <form method="post" target="_blank" action="/saveFileAndUpload" enctype="multipart/form-data" ng-submit="enviarOed()">
               <input type="file" class="filestyle" name="file" fileread="oed.path" required accept=".zip,.rar" onchange="angular.element(this).scope().fileNameChanged(this.files)">
               <br />
               <input type="submit" class="btn btn-info btn-block" value="Enviar" ng-show="uploadRarOrZip">
@@ -36,7 +36,7 @@
         </div>
     </div>
 
-    <form ng-submit="cadastrarOed(oed)" ng-show="oedEnviado">
+    <form ng-show="oedEnviado">
 
       <div class="col-md-12">
 
@@ -72,7 +72,7 @@
           </div>
         </div>
 
-        <input type="submit" class="btn btn-default" value="Enviar">
+        <button type="button" class="btn btn-default" ng-click="cadastrarOed(oed)">Cadastrar</button>
         <a href="#/dashboard" class="btn btn-default">Voltar</a>
 
       </div>
